@@ -1,0 +1,29 @@
+{
+  "name": "term-true-color",
+  "version": "1.0.0",
+  "description": "A very simple function for outputting text in true color on terminals that support it (like iTerm 2 nightly or the terminals [on this list](https://gist.github.com/XVilka/8346728)).",
+  "main": "term-true-color.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beaugunderson/term-true-color.git"
+  },
+  "keywords": [
+    "sgr",
+    "true",
+    "color",
+    "terminal",
+    "term",
+    "shell",
+    "cli",
+    "true-color"
+  ],
+  "bugs": {
+    "url": "https://github.com/beaugunderson/term-true-color/issues"
+  },
+  "homepage": "https://github.com/beaugunderson/term-true-color#readme"
+}
