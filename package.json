@@ -1,6 +1,6 @@
 {
   "name": "term-true-color",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A very simple function for outputting text in true color on terminals that support it (like iTerm 2 nightly or the terminals [on this list](https://gist.github.com/XVilka/8346728)).",
   "main": "term-true-color.js",
   "scripts": {
