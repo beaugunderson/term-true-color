@@ -4,7 +4,7 @@
   "description": "A very simple function for outputting text in true color on terminals that support it (like iTerm 2 nightly or the terminals [on this list](https://gist.github.com/XVilka/8346728)).",
   "main": "term-true-color.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
   "license": "MIT",
@@ -25,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/beaugunderson/term-true-color/issues"
   },
-  "homepage": "https://github.com/beaugunderson/term-true-color#readme"
+  "homepage": "https://github.com/beaugunderson/term-true-color#readme",
+  "dependencies": {
+    "color": "^1.0.3"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1"
+  }
 }

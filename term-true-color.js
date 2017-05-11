@@ -3,7 +3,7 @@
 var Color = require('color');
 
 var SELECT_FOREGROUND = 38;
-// var SELECT_BACKGROUND = 48;
+var SELECT_BACKGROUND = 48;
 
 var DIRECT_RGB = 2;
 
@@ -12,7 +12,7 @@ var RESET = '\x1b[0m';
 
 var DELIMITER = exports.delimiter = ';';
 
-module.exports = function (string, color, attributes) {
+function setColor(selector, colorName, attributes) {
   if (!attributes) {
     attributes = [];
   }
@@ -47,17 +47,36 @@ module.exports = function (string, color, attributes) {
     attributeString += CONTROL + '9m';
   }
 
-  color = new Color(color);
+  var colorObject = new Color(colorName);
 
   return attributeString +
-    CONTROL + [
-      SELECT_FOREGROUND,
-      DIRECT_RGB,
-      color.red(),
-      color.green(),
-      color.blue()
-    ].join(DELIMITER) +
-    'm' +
-    string +
-    RESET;
+         CONTROL + [
+           selector,
+           DIRECT_RGB,
+           colorObject.red(),
+           colorObject.green(),
+           colorObject.blue()
+         ].join(DELIMITER) +
+         'm';
+}
+
+exports.bg = exports.background =
+  function background(string, color, attributes) {
+    return setColor(SELECT_BACKGROUND, color, attributes) +
+           string +
+           RESET;
+  };
+
+exports.fg = exports.foreground =
+  function foreground(string, color, attributes) {
+    return setColor(SELECT_FOREGROUND, color, attributes) +
+           string +
+           RESET;
+  };
+
+exports.color = function color(string, bg, fg, attributes) {
+  return setColor(SELECT_BACKGROUND, bg, attributes) +
+         setColor(SELECT_FOREGROUND, fg, attributes) +
+         string +
+         RESET;
 };
