@@ -1,14 +1,14 @@
 ## term-true-color
 
-A very simple function for outputting text in true color on terminals that
-support it (like iTerm 2 nightly or the terminals
+A function for outputting text in true color on terminals that support it (like
+iTerm 2 or the other terminals
 [on this list](https://gist.github.com/XVilka/8346728)).
 
 ### Examples
 
 ```js
-var trueColor = require('term-true-color');
+var fg = require('term-true-color').fg;
 
-console.log(trueColor('red', 'hello world'));
-console.log(trueColor('#7743ce', 'hello world', ['underline']));
+console.log(fg('hello world', 'red'));
+console.log(fg('hello world', '#7743ce', ['underline']));
 ```
